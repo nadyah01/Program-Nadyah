@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Engagement Rate</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Kalkulator Engagement Rate</h2>
+        <form method="POST">
+            <label>Jumlah Suka:</label>
+            <input type="number" name="Suka" required>
+
+            <label>Jumlah Komen:</label>
+            <input type="number" name="Komen" required>
+
+            <label>Total Bagikan:</label>
+            <input type="number" name="Bagikan" required>
+
+            <label>Jumlah Pengikut:</label>
+            <input type="number" name="Pengikut" required>
+
+            <button type="submit">Total</button>
+        </form>
+
+        {% if er is defined and er is not none %}
+            <h3>Engagement Rate: {{ er }}%</h3>
+        {% endif %}
+    </div>
+</body>
+</html>
